@@ -128,16 +128,6 @@ The notebook also includes a per-query delta histogram (Cross-Encoder vs LTR) to
 
 **Cascade efficiency** — each stage retrieves more candidates than it returns (Hybrid: 50+50 → 50; LTR: 50 → 50; Cross-Encoder: 50 → 10), balancing recall with inference cost.
 
----
-
-## Extending the Project
-
-- **Multilingual support** — swap `all-MiniLM-L6-v2` for `multilingual-e5-large` or `MuRIL` to handle Spanish and Japanese queries from the full ESCI dataset.
-- **Full dataset** — remove the `QUERY_SAMPLE = 2000` cap and run on a machine with sufficient RAM (≥ 32 GB recommended for the full 1.8M pairs).
-- **Elasticsearch integration** — the HNSW parameters (`M=16`, `efConstruction=200`, `efSearch=50`) map directly to ES 8.x `dense_vector` mapping fields; the RRF fusion maps to the ES `rrf` rank clause.
-- **Additional LTR features** — query-category overlap, product review count, historical click-through rate, or spell-corrected query signals (SymSpellPy is already installed).
-
----
 
 ## References
 
